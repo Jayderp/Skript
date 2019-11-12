@@ -15,7 +15,7 @@
  *  along with Skript.  If not, see <http://www.gnu.org/licenses/>.
  *
  *
- * Copyright 2011-2017 Peter Güttinger and contributors
+ * Copyright 2011-2019 Peter Güttinger and contributors
  */
 package ch.njol.skript.effects;
 
@@ -91,7 +91,7 @@ public class EffCancelDrops extends Effect {
 				event.getDrops().clear();
 			if (cancelExps)
 				event.setDroppedExp(0);
-		} else {
+		} else if (e instanceof BlockBreakEvent) {
 			BlockBreakEvent event = (BlockBreakEvent) e;
 			if (cancelItems)
 				event.setDropItems(false);
